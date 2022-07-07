@@ -14,21 +14,22 @@ const App = (props) => {
 
 
   return (
-    
-      <div className='app-wrapper'>
-        <Header />
-        <Navbar />
-        <div class='app-wrapper-content'>
-          <Routes>
-            <Route path="dialogs/*" element={<DialogsContainer />} />
-            <Route path="profile/" element={<ProfileContainer />} />
-            <Route path="users/" element={<UsersContainer />}/>
-            <Route path="music/" element={<Music />} />
-            <Route path="news/" element={<News />} />
-            <Route path="settings/" element={<Settings />} />
-          </Routes>
-        </div>
+
+    <div className='app-wrapper'>
+      <Header />
+      <Navbar />
+      <div class='app-wrapper-content'>
+        <Routes>
+          <Route path="dialogs/*" element={<DialogsContainer />} />
+          <Route path='/profile/:userId'element={<ProfileContainer />} />
+          <Route path='/profile'element={<ProfileContainer />} />
+          <Route path="users/" element={<UsersContainer />} />
+          <Route path="music/" element={<Music />} />
+          <Route path="news/" element={<News />} />
+          <Route path="settings/" element={<Settings />} />
+        </Routes>
       </div>
+    </div>
   );
 }
 
