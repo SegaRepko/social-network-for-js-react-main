@@ -4,25 +4,29 @@ import { Field, reduxForm } from "redux-form";
 import { required } from "../../utils/validators/validators";
 import { Input } from "../common/FormsControls/FormsControls";
 import { login } from "../../redux/auth-reducer";
-import {Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import style from "./../common/FormsControls/FormsControls.module.css"
 
 
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field placeholder={"Email"} name={"email"} 
-                validate={[required]}
-                component={Input}/>
+                <Field placeholder={"Email"} name={"email"}
+                    validate={[required]}
+                    component={Input} />
             </div>
             <div>
                 <Field placeholder={"Password"} name={"password"} type={"password"}
-                validate={[required]}
-                component={Input}/>
+                    validate={[required]}
+                    component={Input} />
             </div>
             <div>
                 <Field component={Input} name={"rememberMe"} type={"checkbox"} /> remember me
             </div>
+            { props.error && <div className={style.formSummaryError}>
+                {props.error}
+            </div>}
             <div>
                 <button>Login</button>
             </div>
@@ -31,7 +35,7 @@ const LoginForm = (props) => {
 }
 
 
-const LoginReduxForm = reduxForm ({form: 'login'}) (LoginForm)
+const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
 
 const Login = (props) => {
@@ -53,4 +57,4 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
 })
 
-export default connect(mapStateToProps, { login }) (Login);
+export default connect(mapStateToProps, { login })(Login);
