@@ -2,8 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import { getUserProfile, getStatus, updateStatus } from "../../redux/profile-reducer";
-import { useLocation, useNavigate, useParams, navigate } from "react-router-dom";
-import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { useLocation, useNavigate, useParams} from "react-router-dom";
 import { compose } from "redux";
 
 
@@ -17,6 +16,12 @@ class ProfileContainer extends React.Component {
     if (!userId) {
       userId = 2;
     }
+    // редирект
+    // if (!userId) {
+    //   userId = this.props.authorizedUserId;
+    //   if (!userId) {
+    //     this.props.history.push("/login");
+    //   }
     this.props.getUserProfile(userId);
     this.props.getStatus(userId);
 
