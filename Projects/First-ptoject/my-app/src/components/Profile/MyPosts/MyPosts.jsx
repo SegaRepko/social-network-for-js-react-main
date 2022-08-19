@@ -7,7 +7,7 @@ import { Textarea } from '../../common/FormsControls/FormsControls';
 
 
 
-const MyPosts = (props) => {
+const MyPosts = React.memo (props => {
 
 
   let postsElements =
@@ -22,10 +22,6 @@ const MyPosts = (props) => {
     props.addPost(values.newPostText);
   }
 
-
-
-
-
   return <div>
     <div className={classes.postsBlock}>
       <h3>My posts</h3>
@@ -35,7 +31,8 @@ const MyPosts = (props) => {
       </div>
     </div>
   </div>
-}
+});
+
 
 
 
