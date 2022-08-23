@@ -4,7 +4,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { Routes, Route, renderMatches } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';

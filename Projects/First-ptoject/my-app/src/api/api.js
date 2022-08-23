@@ -24,7 +24,7 @@ export const usersAPI = {
         return instance.post(`follow/${userId}`);
     },
     unfollow(userId) {
-        return instance.delet(`follow/${userId}`);
+        return instance.delete(`follow/${userId}`);
     },
     getProfile(userId) {
         console.warn('Obsolete method. Please use profileAPI object');
