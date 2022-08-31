@@ -71,6 +71,12 @@ export const authAPI = {
 }
 
 
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get('security/get-captcha-url');
+    }
+}
+
 
 // export const getUsers2 = (currentPage = 1, pageSize = 10) => {
 //     return instance.get('follow?page=${currentPage}&count=${pageSize}',)
